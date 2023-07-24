@@ -8,7 +8,5 @@
 import Foundation
 
 struct Network {
-    struct Result {
-        let data: Data, response: String
-    }
+    static let shared = Network()
 }

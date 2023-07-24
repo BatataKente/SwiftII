@@ -8,7 +8,7 @@
 import Foundation
 
 extension Network {
-    static func put<T: Codable>(_ model: T, from url: URL?) async -> Result? {
+    func put<T: Codable>(_ model: T, from url: URL?) async -> Result? {
         guard let url = url else {fatalError("Wrong url")}
         let request = {(data: Data) -> URLRequest in
             var request = URLRequest(url: url)

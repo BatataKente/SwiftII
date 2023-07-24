@@ -10,7 +10,7 @@ import UIKit
 final class HomeTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        backgroundColor = .green
+        backgroundColor = .clear
         delegate = self
         dataSource = self
         translatesAutoresizingMaskIntoConstraints = false
@@ -18,10 +18,8 @@ final class HomeTableView: UITableView {
             HomeTableViewCell.self,
             forCellReuseIdentifier: "\(HomeTableViewCell.self)"
         )
-        Task {
-            guard let word = await Network.get([String].self, from: .randomWordApi) else {return}
-            print(word.first ?? "")
-        }
+        HomeViewModel.shared.delegate = self
+        HomeViewModel.shared.setWords
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -30,16 +28,23 @@ final class HomeTableView: UITableView {
 
 extension HomeTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return HomeViewModel.shared.getWordsCount
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "\(HomeTableViewCell.self)",
             for: indexPath
-        )
+        ) as? HomeTableViewCell ?? HomeTableViewCell()
+        cell.setup(HomeViewModel.shared.getWords[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/4
+        return 50
+    }
+}
+
+extension HomeTableView: HomeViewModelDelegate {
+    func refreshTableView() {
+        Task{reloadData()}
     }
 }

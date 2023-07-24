@@ -14,7 +14,7 @@ extension UIView {
     }
     @discardableResult func constraint(attribute: NSLayoutConstraint.Attribute,
                     to item: Any? = nil,
-                    _ itemAttribute: NSLayoutConstraint.Attribute? = nil,
+                    by itemAttribute: NSLayoutConstraint.Attribute? = nil,
                     relation: NSLayoutConstraint.Relation = .equal,
                     multiplier: CGFloat = 1,
                     constant: CGFloat? = nil) -> Self {

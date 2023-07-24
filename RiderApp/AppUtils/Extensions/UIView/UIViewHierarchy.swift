@@ -14,10 +14,11 @@ extension UIView {
         }
         return nil
     }
-    func addSubviews(_ views: [UIView]) {
+    @discardableResult func addSubviews(_ views: [UIView]) -> Self {
         for view in views {
             addSubview(view)
         }
+        return self
     }
     func removeSubviews<T>(ofType: T.Type) {
         for subview in subviews where (subview as? T) != nil {

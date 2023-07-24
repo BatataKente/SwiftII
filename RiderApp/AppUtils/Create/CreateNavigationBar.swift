@@ -8,7 +8,7 @@
 import UIKit
 
 extension Create {
-    func navigationController(rootViewController: UIViewController) -> UINavigationController {
+    static func navigationController(rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.navigationBar.tintColor = .label
         let standardAppearance = UINavigationBarAppearance()
