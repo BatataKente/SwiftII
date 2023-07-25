@@ -23,8 +23,10 @@ final class HomeViewModel {
     var getWords: [String] {words ?? []}
     var setWords: Void {
         Task {
-            guard let examples = await Network.shared.get(Examples.self, from: .mockApi) else {return}
-            words = examples.map({$0.name ?? ""})
+            let alamoNetwork = AlamoNetwork()
+            alamoNetwork.get(Examples.self, from: .mockApi) {
+                self.words = $0.map({$0.name ?? ""})
+            }
         }
     }
 }

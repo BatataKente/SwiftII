@@ -36,6 +36,13 @@
 		09A9E0602A6F2790004C94BC /* UIStackViewHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E05F2A6F2790004C94BC /* UIStackViewHierarchy.swift */; };
 		09A9E0622A6F2F94004C94BC /* UIViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E0612A6F2F94004C94BC /* UIViewScreen.swift */; };
 		09A9E0642A6F34A0004C94BC /* CreateCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E0632A6F34A0004C94BC /* CreateCapsuleButton.swift */; };
+		09A9E0672A6F47E4004C94BC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 09A9E0662A6F47E4004C94BC /* Alamofire */; };
+		09A9E06A2A6F6054004C94BC /* AlamoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E0692A6F6054004C94BC /* AlamoNetwork.swift */; };
+		09A9E06C2A6F6081004C94BC /* AlamoNetworkGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E06B2A6F6081004C94BC /* AlamoNetworkGet.swift */; };
+		09A9E06E2A6F608F004C94BC /* AlamoNetworkPut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E06D2A6F608F004C94BC /* AlamoNetworkPut.swift */; };
+		09A9E0702A6F609C004C94BC /* AlamoNetworkPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E06F2A6F609C004C94BC /* AlamoNetworkPost.swift */; };
+		09A9E0722A6F60A7004C94BC /* AlamoNetworkDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E0712A6F60A7004C94BC /* AlamoNetworkDelete.swift */; };
+		09A9E0742A6F627C004C94BC /* AlamoNetworkDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9E0732A6F627C004C94BC /* AlamoNetworkDecode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +77,12 @@
 		09A9E05F2A6F2790004C94BC /* UIStackViewHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewHierarchy.swift; sourceTree = "<group>"; };
 		09A9E0612A6F2F94004C94BC /* UIViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewScreen.swift; sourceTree = "<group>"; };
 		09A9E0632A6F34A0004C94BC /* CreateCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCapsuleButton.swift; sourceTree = "<group>"; };
+		09A9E0692A6F6054004C94BC /* AlamoNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetwork.swift; sourceTree = "<group>"; };
+		09A9E06B2A6F6081004C94BC /* AlamoNetworkGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworkGet.swift; sourceTree = "<group>"; };
+		09A9E06D2A6F608F004C94BC /* AlamoNetworkPut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworkPut.swift; sourceTree = "<group>"; };
+		09A9E06F2A6F609C004C94BC /* AlamoNetworkPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworkPost.swift; sourceTree = "<group>"; };
+		09A9E0712A6F60A7004C94BC /* AlamoNetworkDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworkDelete.swift; sourceTree = "<group>"; };
+		09A9E0732A6F627C004C94BC /* AlamoNetworkDecode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoNetworkDecode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A9E0672A6F47E4004C94BC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +129,7 @@
 		09A24C9F2A6C804700345693 /* AppUtils */ = {
 			isa = PBXGroup;
 			children = (
+				09A9E0682A6F6041004C94BC /* AlamoNetwork */,
 				09A24CB32A6C878500345693 /* Extensions */,
 				09A24CA62A6C842E00345693 /* Network */,
 				09A24CA32A6C80E500345693 /* Create */,
@@ -264,6 +279,19 @@
 			path = UIStackView;
 			sourceTree = "<group>";
 		};
+		09A9E0682A6F6041004C94BC /* AlamoNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				09A9E0692A6F6054004C94BC /* AlamoNetwork.swift */,
+				09A9E06B2A6F6081004C94BC /* AlamoNetworkGet.swift */,
+				09A9E06D2A6F608F004C94BC /* AlamoNetworkPut.swift */,
+				09A9E06F2A6F609C004C94BC /* AlamoNetworkPost.swift */,
+				09A9E0712A6F60A7004C94BC /* AlamoNetworkDelete.swift */,
+				09A9E0732A6F627C004C94BC /* AlamoNetworkDecode.swift */,
+			);
+			path = AlamoNetwork;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +308,9 @@
 			dependencies = (
 			);
 			name = RiderApp;
+			packageProductDependencies = (
+				09A9E0662A6F47E4004C94BC /* Alamofire */,
+			);
 			productName = RiderApp;
 			productReference = 0927D0632A69965B00EFBAD8 /* RiderApp.app */;
 			productType = "com.apple.product-type.application";
@@ -308,6 +339,9 @@
 				Base,
 			);
 			mainGroup = 0927D05A2A69965B00EFBAD8;
+			packageReferences = (
+				09A9E0652A6F47E4004C94BC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0927D0642A69965B00EFBAD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,19 +377,25 @@
 				095B4D762A6D85D100D55799 /* NetworkDelete.swift in Sources */,
 				0927D07F2A69989100EFBAD8 /* HomeView.swift in Sources */,
 				0927D08B2A69AF7B00EFBAD8 /* Create.swift in Sources */,
+				09A9E06E2A6F608F004C94BC /* AlamoNetworkPut.swift in Sources */,
 				09A24CBE2A6C8A7600345693 /* UIViewConstraints.swift in Sources */,
 				095B4D742A6D84F600D55799 /* Example.swift in Sources */,
+				09A9E06C2A6F6081004C94BC /* AlamoNetworkGet.swift in Sources */,
 				095B4D722A6D83BF00D55799 /* NetworkResult.swift in Sources */,
+				09A9E0702A6F609C004C94BC /* AlamoNetworkPost.swift in Sources */,
 				0927D06B2A69965B00EFBAD8 /* HomeViewController.swift in Sources */,
 				09A9E05A2A6F2136004C94BC /* UIImageSystemNamedImages.swift in Sources */,
 				09A24CB62A6C879C00345693 /* StringHttpMethods.swift in Sources */,
 				09A24CA82A6C844200345693 /* Network.swift in Sources */,
+				09A9E0742A6F627C004C94BC /* AlamoNetworkDecode.swift in Sources */,
 				09A24CAC2A6C84D400345693 /* NetworkGet.swift in Sources */,
+				09A9E06A2A6F6054004C94BC /* AlamoNetwork.swift in Sources */,
 				09A24CB02A6C859D00345693 /* NetworkPut.swift in Sources */,
 				0927D08D2A69B35900EFBAD8 /* HomeStackView.swift in Sources */,
 				0927D0672A69965B00EFBAD8 /* AppDelegate.swift in Sources */,
 				09A24CAA2A6C84C900345693 /* NetworkDecode.swift in Sources */,
 				09A24CAE2A6C859100345693 /* NetworkPost.swift in Sources */,
+				09A9E0722A6F60A7004C94BC /* AlamoNetworkDelete.swift in Sources */,
 				0927D0892A69AAE600EFBAD8 /* HomeTableViewCell.swift in Sources */,
 				0927D0692A69965B00EFBAD8 /* SceneDelegate.swift in Sources */,
 				09A24CB92A6C87F300345693 /* URLRequestAddValue.swift in Sources */,
@@ -568,6 +608,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		09A9E0652A6F47E4004C94BC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		09A9E0662A6F47E4004C94BC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09A9E0652A6F47E4004C94BC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0927D05B2A69965B00EFBAD8 /* Project object */;
 }

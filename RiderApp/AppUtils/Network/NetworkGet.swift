@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 extension Network {
     func get(from url: URL?) async -> Result? {
