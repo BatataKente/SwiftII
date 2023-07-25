@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 extension Network {
     func post<T: Codable>(_ model: T, from url: URL?) {
